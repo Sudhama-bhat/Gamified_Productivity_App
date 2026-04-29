@@ -22,6 +22,9 @@ app.use('/api/user', userRoutes);
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'OK', time: new Date() }));
 
+// Root route
+app.get('/', (req, res) => res.send('Gamified Productivity App Backend is running!'));
+
 // 404 handler
 app.use((req, res) => res.status(404).json({ message: 'Route not found' }));
 
